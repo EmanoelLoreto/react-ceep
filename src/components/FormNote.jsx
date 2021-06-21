@@ -9,8 +9,7 @@ export default class FormNote extends Component {
     this.content = "";
   }
 
-  _submitCard(event) {
-    event.preventDefault();
+  _submitCard() {
     this.props.createNote(this.title, this.content);
   }
 
@@ -26,7 +25,10 @@ export default class FormNote extends Component {
     return (
       <form
         className="form"
-        onSubmit={(event) => this._submitCard(event)}
+        onSubmit={(event) => {
+          event.preventDefault();
+          this._submitCard()
+        }}
       >
         <input
           type="text"
@@ -37,7 +39,7 @@ export default class FormNote extends Component {
           placeholder="Escreva sua anotação"
           onChange={(event) => this._handleConteudoInput(event)}
         />
-        <button>Criar nota</button>
+        <button className="submit-button">Criar nota</button>
       </form>
     )
   }

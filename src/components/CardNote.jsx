@@ -6,6 +6,10 @@ export default class CardNote extends Component {
     return (
       <div className="card">
         <div className="header-card">
+          <button
+            className="close-button"
+            onClick={() => this.props.deleteNote(this.props.card)}
+          >X</button>
           <h3>{this.props.data.title}</h3>
         </div>
         <div className="content-card">

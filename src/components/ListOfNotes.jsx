@@ -8,7 +8,12 @@ export default class ListOfNotes extends Component {
       <div className="list-cards">
         {this.props.cards.map((card, index) => {
           return (
-            <CardNote data={card} key={index}/>
+            <CardNote
+              data={card}
+              card={index}
+              key={index}
+              deleteNote={(event) => this.props.deleteNote(event)}
+            />
           );
         })}
       </div>

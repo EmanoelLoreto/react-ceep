@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import FormGrade from './components/FormNote.jsx'
-import ListOfGrades from './components/ListOfNotes.jsx'
+import FormNotes from './components/FormNote.jsx'
+import ListOfNotes from './components/ListOfNotes.jsx'
 
 export default class App extends Component {
 
@@ -20,11 +20,19 @@ export default class App extends Component {
     })
   }
 
+  deleteNote(index) {
+    this.cards.splice(index, 1);
+    this.setState({
+      cards: this.cards
+    })
+  }
+
   render() {
     return (
       <>
-        <FormGrade createNote={(title, content) => this.createNote(title, content)} />
-        <ListOfGrades cards={this.cards} />
+        <FormNotes createNote={(title, content) => this.createNote(title, content)} />
+        <hr />
+        <ListOfNotes cards={this.cards} deleteNote={(event) => this.deleteNote(event)} />
       </>
     );
   }

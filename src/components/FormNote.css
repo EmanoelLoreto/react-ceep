@@ -19,11 +19,11 @@ textarea {
   padding: 5px;
   border-radius: 3px;
   border: none;
-  max-width: 96%;
+  max-width: 100%;
   min-height: 10vh;
 }
 
-button {
+.submit-button {
   margin-left: auto;
   margin-top: 5px;
   width: 30%;
