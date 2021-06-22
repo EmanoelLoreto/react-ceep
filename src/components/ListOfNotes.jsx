@@ -10,7 +10,7 @@ export default class ListOfNotes extends Component {
           return (
             <CardNote
               data={card}
-              card={index}
+              indexCard={index}
               key={index}
               deleteNote={(event) => this.props.deleteNote(event)}
             />
