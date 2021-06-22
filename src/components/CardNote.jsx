@@ -8,15 +8,12 @@ export default class CardNote extends Component {
         <div className="header-card">
           <button
             className="close-button"
-            onClick={() => this.props.deleteNote(this.props.indexCard)}
+            onClick={() => this.props.deleteNote(this.props.card)}
           >X</button>
           <h3>{this.props.data.title}</h3>
         </div>
         <div className="content-card">
           <p>{this.props.data.content}</p>
-        </div>
-        <div className="categorie-card">
-          <p>{this.props.data.categorie}</p>
         </div>
       </div>      
     );
